@@ -1,13 +1,10 @@
-
-from os import read
-
-
 def read_input():
     """ Read input file """
-    with open('inputs/day1.txt') as f:
+    with open("inputs/day1.txt") as f:
         lines = f.read().splitlines()
 
     return [int(line) for line in lines]
+
 
 def find_measurements_larger_than_prev(all_num: list):
     """ Find all measurements greater than previous measurements"""
@@ -23,15 +20,17 @@ def find_measurements_larger_than_prev(all_num: list):
             prev = num
     return counter
 
+
 def find_sum_of_windows(all_num: list):
     """ Find sum of three sliding windows """
 
     sum_of_windows = []
     for i in range(len(all_num)):
         try:
-            sum_of_windows.append(all_num[i] + all_num[i+1] + all_num[i+2])
+            sum_of_windows.append(all_num[i] + all_num[i + 1] + all_num[i + 2])
         except IndexError:
             return find_measurements_larger_than_prev(sum_of_windows)
+
 
 def main():
     all_num = read_input()
@@ -40,5 +39,6 @@ def main():
 
     print(counter1)
     print(counter2)
+
 
 main()
