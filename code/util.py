@@ -4,7 +4,8 @@ def read_input(file):
         lines = f.read().splitlines()   
     return lines
 
-def yield_input(file):
+def read_input_as_int(file):
     """ Read input file """
     with open("../inputs/"+file) as f:
-        yield f.read().splitlines()   
+        lines = f.read().splitlines()   
+    return [int(line) for line in lines]
