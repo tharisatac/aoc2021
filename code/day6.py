@@ -45,7 +45,7 @@ def main():
     for days in all_days:
         fish_group.add_fish(days)
 
-    fish_group.countdown(256)
+    fish_group.countdown(1000)
     fish_group.print_num_fish()
 
 
